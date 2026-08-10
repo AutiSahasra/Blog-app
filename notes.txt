@@ -1,0 +1,62 @@
+### MY NOTES ### 
+
+to build a react app, in frontend run "npm create vite@latest"
+
+=> 1. define schema and models
+
+=> 2.do backend
+    {
+        * create server.js
+        * create .env file, to keep environment variables
+        eg port no (PORT), databaseUrl (DBURL)
+        * create .gitignore file, all the files/folders which are kept in this are automatically ignored by github.
+        Sensitive info files:- like .env,folder:- node_modules/ (as its very huge) can be kept there
+        *  install all related dependencies: express, mongoose, dotenv, cors 
+        (npm i express dotenv mongoose cors)
+        * Set up http server and db connection
+        * Now create API's folder. And define basic struct for each API (imports, basic get, exports). And import them into server.js and define url paths app.use(),
+        Test those get req, empty browser can be used as they are get req eg: [http://localhost:3000/user-api]
+        
+        //DEFINE models
+        * Identify relationships, and according create schemas, required for application, very crucial.So create MODELS folder
+    }
+
+=>3.do frontend
+
+
+
+
+## Steps to create web app
+
+1. Design schemas
+
+2. Create Models
+
+3. Implement API CRUD operations
+
+    3.1 Create User/Author
+        3.1.1 One can register either Author or User
+        3.1.2 Once the user assigned a role, he cant register for other role with same e-mail
+
+    3.2 Post new Article by Author
+        3.2.1 Use timestamp as articleId
+        3.2.2 Take current date for dateOfCreation & for dateOfModification for an article
+
+    3.3 Edit article by Author using author ID
+
+    3.4 Delete/Restore article by Author using author ID
+        3.4.1 Change isArticleActive state to false/true to delete & restore an article
+
+    3.5 User can read all articles
+        3.5.1 Sort list of articles by date of creation (By student)
+        3.5.2 Search for an article by category (By student)
+
+    3.6 User can write comments for articles
+
+4. Create Frontend app
+
+5. Identify components and create Root layout
+
+6. Implement Routing
+
+7. Make AJAX calls from Components
