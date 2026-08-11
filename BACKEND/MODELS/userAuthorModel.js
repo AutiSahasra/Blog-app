@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const userAuthorSchema=mongoose.Schema({
+const userAuthorSchema= new mongoose.Schema({
     role:
     {
         required:true,

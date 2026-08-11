@@ -1,8 +1,9 @@
 const exp=require('express')
 const userApp=exp.Router()
 const UserAuthor=require('../MODELS/userAuthorModel')
+const expressAsyncHandler=require("express-async-handler")
 
-userApp.get('/users',async(req,res)=>{
+userApp.get('/users',expressAsyncHandler(async(req,res)=>{
     try
     {
     const users= await UserAuthor.find({})
@@ -12,6 +13,6 @@ userApp.get('/users',async(req,res)=>{
     {
         res.send(`error occured: ${e.message}`)
     }
-})
+}))
 
 module.exports=userApp

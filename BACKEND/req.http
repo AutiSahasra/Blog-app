@@ -1,0 +1,25 @@
+GET http://localhost:3000/user-api/
+###
+GET http://localhost:3000/author-api/
+###
+GET http://localhost:3000/admin-api/
+###
+POST http://localhost:3000/user-api/users
+Content-Type: application/json
+
+{
+    "name": "Sahasra",
+    "email": "sahasra@gmail.com",
+    "password": "Sahasra@123",
+    "role": "user"
+}
+
+POST http://localhost:3000/author-api/users
+Content-Type: application/json
+
+{
+    "name": "John Author",
+    "email": "author@gmail.com",
+    "password": "Author@123",
+    "role": "author"
+}

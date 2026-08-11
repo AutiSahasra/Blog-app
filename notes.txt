@@ -19,6 +19,8 @@ to build a react app, in frontend run "npm create vite@latest"
         
         //DEFINE models
         * Identify relationships, and according create schemas, required for application, very crucial.So create MODELS folder
+        * For error handling use (npm i express-async-handler) in rest apis
+
     }
 
 =>3.do frontend
