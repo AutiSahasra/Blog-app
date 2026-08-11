@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const userAuthorSchema= new mongoose.Schema({
     role:
-    {
+    {   
         required:true,
         type:String
     },
@@ -16,7 +16,8 @@ const userAuthorSchema= new mongoose.Schema({
     },
     email:{
         required:true,
-        type:String
+        type:String,
+        unique:true
     },
     profileImageUrl:{
         type:String

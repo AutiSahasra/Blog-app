@@ -20,7 +20,7 @@ to build a react app, in frontend run "npm create vite@latest"
         //DEFINE models
         * Identify relationships, and according create schemas, required for application, very crucial.So create MODELS folder
         * For error handling use (npm i express-async-handler) in rest apis
-
+        * to create user, and to create author, we have same logic, so to avoid repetation of code, create a seperate function, to handle create
     }
 
 =>3.do frontend
@@ -62,3 +62,20 @@ to build a react app, in frontend run "npm create vite@latest"
 6. Implement Routing
 
 7. Make AJAX calls from Components
+
+
+IMP STATUS CODES:--
+
+200 → OK
+201 → Created
+204 → No Content
+
+400 → Bad Request
+401 → Unauthorized
+403 → Forbidden
+404 → Not Found
+409 → Conflict
+
+500 → Internal Server Error
+
+//One mail can only have one role
