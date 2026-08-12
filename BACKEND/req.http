@@ -3,7 +3,8 @@ GET http://localhost:3000/user-api/
 GET http://localhost:3000/author-api/
 ###
 GET http://localhost:3000/admin-api/
-###
+
+###Create user
 POST http://localhost:3000/user-api/users
 Content-Type: application/json
 
@@ -13,7 +14,7 @@ Content-Type: application/json
     "password": "Sahasra@123",
     "role": "user"
 }
-
+## create author
 POST http://localhost:3000/author-api/users
 Content-Type: application/json
 
@@ -22,4 +23,23 @@ Content-Type: application/json
     "email": "author@gmail.com",
     "password": "Author@123",
     "role": "author"
+}
+### POST Article
+POST http://localhost:3000/author-api/article
+Content-Type: application/json
+
+{
+    "authorData": {
+        "nameOfAuthor": "John Author",
+        "email": "author@gmail.com",
+        "profileImageUrl": "https://example.com/profile.jpg"
+    },
+    "articleId": "{{$timestamp}}",
+    "title": "Introduction to MERN Stack",
+    "category": "Web Development",
+    "content": "MERN stack is a popular technology stack consisting of MongoDB, Express.js, React.js and Node.js. It is used to build full-stack web applications.",
+    "dateOfCreation": "{{$datetime iso8601}}",
+    "dateOfModification": "{{$datetime iso8601}}",
+    "comments": [],
+    "isArticleActive": true
 }
