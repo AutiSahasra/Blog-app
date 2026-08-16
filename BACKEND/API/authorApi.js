@@ -23,4 +23,10 @@ authorApp.get('/articles',expressAsyncHandler(async(req,res)=>{
   res.status(200).send({message:"Fetched all articles!", payload:allArticles})
 }))
 
+//to modify an article by its id
+authorApp.put('/article/:id',expressAsyncHandler(async(req,res)=>{
+  const newModifiedArticle= await Articles.findByIdAndUpdate(modifiedArticle._id,{...modifiedArticle},{returnOriginal:false})
+  res.status(200).send({meesage:"Article modified successfully!",payload:newModifiedArtice})
+}))
+
 module.exports=authorApp

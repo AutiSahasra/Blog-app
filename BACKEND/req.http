@@ -43,3 +43,21 @@ Content-Type: application/json
     "comments": [],
     "isArticleActive": true
 }
+
+### MODIFY Article
+PUT http://localhost:3000/author-api/article/6a7c451e37c44e6b8c150235
+Content-Type: application/json
+
+{
+    "authorData": {
+        "nameOfAuthor": "John Author",
+        "email": "author@gmail.com",
+        "profileImageUrl": "https://example.com/profile.jpg"
+    },
+    "title": "Introduction to MERN",
+    "category": "Web Dev",
+    "content": "MERN stack is a popular technology stack consisting of MongoDB, Express.js, React.js and Node.js. It is used to build full-stack web applications.",
+    "dateOfModification": "{{$datetime iso8601}}",
+    "comments": [],
+    "isArticleActive": true
+}
