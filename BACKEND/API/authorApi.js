@@ -17,16 +17,28 @@ authorApp.post('/article',expressAsyncHandler(async(req,res)=>{
     res.status(200).send({message:"article posted successfully!",payload:newArticleObj})
 }))
 
-//to get all articles
+//to get all articles whose isActive = true
 authorApp.get('/articles',expressAsyncHandler(async(req,res)=>{
-  const allArticles= await Articles.find({})
+  const allArticles= await Articles.find({isArticleActive:true})
   res.status(200).send({message:"Fetched all articles!", payload:allArticles})
 }))
 
 //to modify an article by its id
 authorApp.put('/article/:id',expressAsyncHandler(async(req,res)=>{
-  const newModifiedArticle= await Articles.findByIdAndUpdate(modifiedArticle._id,{...modifiedArticle},{returnOriginal:false})
-  res.status(200).send({meesage:"Article modified successfully!",payload:newModifiedArtice})
+  const newModifiedArticle= await Articles.findByIdAndUpdate(req.params.id,req.body,{new:true})
+  res.status(200).send({message:"Article modified successfully!",payload:newModifiedArticle})
 }))
+
+//to delete article(soft delete) i.e update isActive
+authorApp.put('/articledel/:id',expressAsyncHandler(async(req,res)=>{
+  const newModifiedArticle= await Articles.findByIdAndUpdate(req.params.id,{isArticleActive: false},{new:true})
+  res.status(200).send({message:"Deleted successfully!",payload:newModifiedArticle})
+}))
+//to restore deleted article i.e update isActive
+authorApp.put('/articledelrev/:id',expressAsyncHandler(async(req,res)=>{
+  const newModifiedArticle= await Articles.findByIdAndUpdate(req.params.id,{isArticleActive: true},{new:true})
+  res.status(200).send({message:"Deleted successfully!",payload:newModifiedArticle})
+}))
+
 
 module.exports=authorApp

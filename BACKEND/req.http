@@ -61,3 +61,15 @@ Content-Type: application/json
     "comments": [],
     "isArticleActive": true
 }
+### soft delete an article
+PUT http://localhost:3000/author-api/articledel/6a7c451e37c44e6b8c150235
+### revstore soft delete an article
+PUT http://localhost:3000/author-api/articledelrev/6a7c451e37c44e6b8c150235
+###add comment
+PUT http://localhost:3000/user-api/comment/6a7c451e37c44e6b8c150235
+Content-Type: application/json
+
+{
+    "nameOfUser":"Sathu",
+    "comment":"Loved it!"
+}
