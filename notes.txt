@@ -1,7 +1,5 @@
 ### MY NOTES ### 
 
-to build a react app, in frontend run "npm create vite@latest"
-
 => 1. define schema and models
 
 => 2.do backend
@@ -45,6 +43,14 @@ to build a react app, in frontend run "npm create vite@latest"
             UserProfile
             ├── Articles
             └── ArticleByID
+            
+            
+            * to build a react app, in frontend run "npm create vite@latest"
+            * npm i react-router-dom (module, which helps to implement Routing)
+            * Do routing configiration in main.jsx, using createBrowserRouter 
+            * Use RouterProvider in Strict mOde to make routes available
+            * use Outlet module, to set up dynamic routr btw header and footer in RootLayout
+
     }
 
 
